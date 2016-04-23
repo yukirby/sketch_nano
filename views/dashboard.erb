@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Sketch nano</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>ダッシュボード</h1>
+
+    <a href="/draw">新しい絵を投稿する</a>
+
+    <% posts.each do |post| %>
+        <div class="post">
+            <h2>
+                <%= escape_html post["title"] %>
+            </h2>
+            <p class="post-image">
+                <img src="/uploads/<%= post["src"] %>" alt="<%= post["title"] %>">
+            </p>
+            <p>
+                <button class="like" data-id="<%= post["id"] %>">
+                    <%= post["likes"] %>
+                </button>
+            </p>
+        </div>
+    <% end %>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
