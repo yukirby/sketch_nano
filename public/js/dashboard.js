@@ -8,7 +8,7 @@ $(function () {
         var likes    = $clicked.text();
 
         $.get('/like', {
-            likes: likes
+            id: dataId
         }, function (result) {
             $clicked.text(result.like);
         });
