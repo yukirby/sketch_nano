@@ -46,9 +46,11 @@ $(function () {
     // 保存
     $('button.save').click(function (e) {
         var dataUrl = canvas.toDataURL();
+        var title = $('.drawbox input[name=title]').val();
 
         $.post('/save', {
-            src: dataUrl
+            src: dataUrl,
+            title: title
         }, function (result) {
             alert('保存しました！');
             // 画面を真っ白にする
