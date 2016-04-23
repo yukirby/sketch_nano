@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sqlite3'
-require 'base64'
+require 'data_uri'
 require 'securerandom'
 require 'sinatra/json'
 
@@ -32,9 +32,8 @@ get '/draw' do
 end
 
 post '/save' do
-  # base64をデコード
-  base64 = params["src"]
-  img    = Base64.decode64(base64)
+  datauri = params["src"]
+  img    = URI::Data.new(datauri).data
 
   # ファイル名を付ける
   name = SecureRandom.hex + ".png"
