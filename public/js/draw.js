@@ -2,11 +2,16 @@
 
 $(function () {
     var $canvas   = $('canvas');
-    var context2d = $canvas[0].getContext('2d');
+    var canvas = $canvas[0];
+    var width = canvas.width;
+    var height = canvas.height;
+
+    var context2d = canvas.getContext('2d');
     var isDrawing = false;
 
     // 画面を真っ白にする
     context2d.fillStyle = '#FFF';
+    context2d.fillRect(0, 0, width, height);
 
     // マウスを押し始めた時
     $canvas.mousedown(function (e) {
@@ -40,14 +45,17 @@ $(function () {
 
     // 保存
     $('button.save').click(function (e) {
-        var dataUrl = $canvas[0].toDataURL();
+        var dataUrl = canvas.toDataURL();
+        var title = $('.drawbox input[name=title]').val();
 
         $.post('/save', {
-            img: encodeURIComponent(dataurl)
+            src: dataUrl,
+            title: title
         }, function (result) {
             alert('保存しました！');
             // 画面を真っ白にする
             context2d.fillStyle = '#FFF';
+            context2d.fillRect(0, 0, width, height);
         });
     });
 });
