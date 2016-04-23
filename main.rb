@@ -44,8 +44,8 @@ post '/save' do
   end
 
   # DBに突っ込む
-  stmt = db.prepare("INSERT INTO pictures (title, src) VALUES (?, ?)")
-  stmt.bind_params(params["title"], name)
+  stmt = db.prepare("INSERT INTO pictures (title, src, posted_at) VALUES (?, ?, ?)")
+  stmt.bind_params(params["title"], name, Time.now.strftime('%Y-%m-%d %H:%M:%S'))
   stmt.execute
 
   # おわったらダッシュボードに戻る
