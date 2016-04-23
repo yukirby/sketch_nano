@@ -10,7 +10,7 @@ $(function () {
         $.get('/like', {
             id: dataId
         }, function (result) {
-            $clicked.text(result.like);
+            $clicked.text(result.likes);
         });
     });
 });
