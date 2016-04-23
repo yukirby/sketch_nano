@@ -45,10 +45,10 @@ $(function () {
 
     // 保存
     $('button.save').click(function (e) {
-        var dataUrl = $canvas[0].toDataURL();
+        var dataUrl = canvas.toDataURL();
 
         $.post('/save', {
-            img: encodeURIComponent(dataurl)
+            src: dataUrl
         }, function (result) {
             alert('保存しました！');
             // 画面を真っ白にする
