@@ -44,7 +44,7 @@ post '/save' do
   end
 
   # DBに突っ込む
-  stmt = db.prepare("INSERT INTO posts (title, src) VALUES (?, ?)")
+  stmt = db.prepare("INSERT INTO pictures (title, src) VALUES (?, ?)")
   stmt.bind_params(params["title"], name)
   stmt.execute
 
