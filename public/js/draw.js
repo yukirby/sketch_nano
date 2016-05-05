@@ -1,7 +1,7 @@
 'use strict';
 
 $(function () {
-	var $canvas   = $('canvas');
+	var $canvas = $('canvas');
 	var canvas = $canvas[0];
 	var width = canvas.width;
 	var height = canvas.height;
@@ -9,6 +9,7 @@ $(function () {
 	var context2d = canvas.getContext('2d');
 	var isDrawing = false;
 
+  // 画面を真っ白にする
 	context2d.fillStyle = '#FFF';
 	context2d.fillRect(0, 0, width, height);
 
