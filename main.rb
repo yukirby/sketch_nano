@@ -56,8 +56,8 @@ post '/draw' do
 
   # DBに登録する
   time = Time.now.strftime('%Y-%m-%d %H:%M:%S')
-  sql = "INSERT INTO pictures (title, src, posted_at) VALUES (?, ?, ?)"
-  db.execute(sql, [params['title'], name, time])
+  sql = "INSERT INTO pictures (title, src, posted_at) VALUES ('#{params['title']}', '#{name}', '#{time}')"
+  db.execute(sql)
 
   # 終わったらダッシュボードに戻る
   redirect '/dashboard'
