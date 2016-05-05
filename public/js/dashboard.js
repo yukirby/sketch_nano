@@ -5,11 +5,6 @@ $(function () {
     var $clicked = $(this);
     var dataId   = $clicked.data('id');
     var likes    = $clicked.text();
-
-    $.get('/api/like', {
-      id: dataId
-    }, function (result) {
-      $clicked.text(result.likes);
-    });
+    $clicked.text(parseInt(likes, 10) + 1);
   });
 });
