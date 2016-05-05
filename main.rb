@@ -45,14 +45,21 @@ end
 post '/draw' do
   datauri = params['src']
   img = URI::Data.new(datauri).data
+
+  # ファイル名をつける
   name = SecureRandom.hex + '.png'
+
+  # 画像を保存
   File.open("./public/uploads/" + name, "wb") do |file|
     file.write img
   end
+
+  # DBに登録する
   time = Time.now.strftime('%Y-%m-%d %H:%M:%S')
   sql = "INSERT INTO pictures (title, src, posted_at) VALUES (?, ?, ?)"
   db.execute(sql, [params['title'], name, time])
 
+  # 終わったらダッシュボードに戻る
   redirect '/dashboard'
 end
 
