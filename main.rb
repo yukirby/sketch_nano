@@ -56,25 +56,13 @@ post '/draw' do
 
   # DBに登録する
   time = Time.now.strftime('%Y-%m-%d %H:%M:%S')
-  sql = "INSERT INTO pictures (title, src, posted_at) VALUES (?, ?, ?)"
-  db.execute(sql, [params['title'], name, time])
+  sql = "INSERT INTO pictures (title, src, posted_at) VALUES ('#{params['title']}', '#{name}', '#{time}')"
+  db.execute_batch(sql)
 
   # 終わったらダッシュボードに戻る
   redirect '/dashboard'
 end
 
 get '/api/like' do
-  id = params['id'].to_i
-  post = db.execute("SELECT likes FROM pictures WHERE id = ?", id)[0]
-
-  if post.empty?
-    return "error"
-  end
-
-  likes = post['likes'] + 1
-  db.execute("UPDATE pictures SET likes = ? WHERE id = ?", [likes, id])
-
-  response = {:likes => likes}
-  json response
 end
 
