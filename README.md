@@ -9,3 +9,5 @@ sketch nano desu
 * sqlite3
 * sinatra-contrib
 * data_uri
+
+`gem install data_uri` のようなコマンドを打つ
