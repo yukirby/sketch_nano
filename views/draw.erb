@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>Sketch nano</title>
-	<link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <form class="drawbox">
-        <h1>✎ お絵かき画面</h1>
-        <p>
-            <a href="/dashboard">← ダッシュボードに戻る</a>
-        </p>
-        <p>
-            <canvas width="500" height="400"></canvas>
-        </p>
-        <p>
-            <input type="text" name="title" placeholder="絵のタイトル"></input>
-        </p>
-        <button class="save">💾 保存する</button>
-    </form>
-
-    <script src="/js/jquery.js"></script>
-    <script src="/js/draw.js"></script>
-</body>
-</html>
+<div class="drawbox">
+  <h1>お絵かき画面</h1>
+  <p><canvas id="draw_canvas" width="640px" height="480px"></canvas></p>
+  <p><input type="text" name="title" placeholder="絵のタイトル"></input></p>
+  <button class="save">保存する</button>
+</div>
+<script src="/js/draw.js"></script>
