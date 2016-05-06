@@ -10,4 +10,6 @@ sketch nano desu
 * sinatra-contrib
 * data_uri
 
-`gem install data_uri` のようなコマンドを打つ
+`gem install data_uri` のようなコマンドを打つ。
+
+失敗したら `sudo gem install data_uri` -> 自分のPCのパスワード
