@@ -1,1 +1,6 @@
 public/uploads/*.png
+.DS_Store
+Gemfile.lock
+*.db
+vendor/
+.bundle/
