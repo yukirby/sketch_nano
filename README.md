@@ -23,7 +23,7 @@ ruby main.rb
 
 ## データベースのスキーマ（構造）
 
-```
+```sql
 CREATE TABLE pictures (
     id           INTEGER PRIMARY KEY,
     title        TEXT,
