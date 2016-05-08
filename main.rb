@@ -5,8 +5,6 @@ require 'data_uri'
 require 'securerandom'
 require 'logger'
 
-require './sql_helper.rb'
-
 logger = Logger.new(STDOUT)
 
 # DBの生成
