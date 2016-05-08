@@ -9,7 +9,7 @@ sketch nano desu
 * sqlite3
 * sinatra-contrib
 * data_uri
-* -securerandom-
+* securerandom (requireはいるけどgem installはいらない)
 
 `gem install data_uri` のようなコマンドを打つ。
 
