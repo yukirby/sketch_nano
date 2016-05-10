@@ -1,9 +1,10 @@
 body {
     background: #white;
     color: #5C4747;/* 文字の色 */
+    background-color: #FFDCEF;
 
 }
-
+<!--見出しだよ-->
 h2{
   font-size: 1.2em;/* 文字の大きさ */
   font-weight: bold;/* 文字の太さ */
@@ -13,6 +14,7 @@ h2{
   margin: 0 0 1.5em;
   padding: 0.2em 0.8em;
 }
+<!--見出しだよ-->
 .enter{
   font-size: 1.2em;/* 文字の大きさ */
    font-weight: bold;/* 文字の太さ */
@@ -20,7 +22,7 @@ h2{
    background: #F9B8CD;/* 背景色 */
 }
 a:link { color: #5C4747; }
-a:visited { color: white; }
+a:visited { color: #5C4747; }
 a:hover { color: black; }
 a:active { color: #E7FF00 }
 
@@ -40,7 +42,7 @@ canvas {
     background: #fff;
 }
 
-
+<!--リストの説明>
 .defaultlist
 ,.defaultlist li{
 	padding:0px;
