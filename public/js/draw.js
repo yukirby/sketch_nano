@@ -12,6 +12,16 @@ $(function () {
   // 画面を真っ白にする
   context2d.fillStyle = '#FFF';
   context2d.fillRect(0, 0, width, height);
+  context2d.strokeStyle = '#DD1281';
+  context2d.lineWidth = 10; //初期値
+  context2d.lineJoin = 'round'
+  context2d.lineCap = 'round'
+  context2d.shadowBlur = 3;
+  context2d.shadowColor = '#DD1281';
+
+
+
+
 
   // マウスを押し始めた時
   $canvas.mousedown(function (e) {
@@ -33,6 +43,8 @@ $(function () {
     }
   });
 
+
+
   // マウスを離した時
   $canvas.mouseup(function (e) {
     isDrawing = false;
@@ -42,6 +54,18 @@ $(function () {
   $canvas.mouseleave(function (e) {
     isDrawing = false;
   });
+  //スライダーの線の太さを反映させる
+  $('#line').on('input',function()
+                {
+                    var width = $(this).val();
+                    context2d.lineWidth = width;
+                });
+//スライダーの線の太さを反映させる
+$('#color').on('change',function()
+    {
+    var color = $(this).val();
+    context2d.strokeStyle = color;
+    });
 
   // 保存
   $('button.save').click(function (e) {
@@ -59,3 +83,5 @@ $(function () {
     });
   });
 });
+
+var context = $('canvas')[0].getContext('2d');
