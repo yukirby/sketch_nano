@@ -59,7 +59,7 @@ $(function () {
                 {
                     var width = $(this).val();
                     context2d.lineWidth = width;
-                });
+た                });
 //スライダーの線の太さを反映させる
 $('#color').on('change',function()
     {
@@ -71,12 +71,14 @@ $('#color').on('change',function()
   $('button.save').click(function (e) {
     var dataUrl = canvas.toDataURL();
     var title = $('.drawbox input[name=title]').val();
+    var adult = $('.drawbox input[id=adult]').prop("checked");
 
     $.post('/draw', {
       src: dataUrl,
-      title: title
+      title: title,
+      adult: adult,
     }, function (result) {
-      alert('保存しました！');
+      alert('保存しました');
       // 画面を真っ白にする
       context2d.fillStyle = '#FFF';
       context2d.fillRect(0, 0, width, height);
