@@ -51,5 +51,8 @@ post '/draw' do
   redirect '/dashboard'
 end
 
-get '/api/like' do
+post '/api/like' do
+  sql = "UPDATE pictures SET likes = likes+1 Where id = #{params['like']}"
+  db.execute_batch(sql)
+  return "ok"
 end

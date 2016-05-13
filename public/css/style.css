@@ -2,7 +2,8 @@ body {
     background: #white;
     color: #5C4747;/* 文字の色 */
     background-color: #FFDCEF;
-
+    width: 700px;
+    margin: 0 auto;
 }
 <!--見出しだよ-->
 h2{
@@ -95,4 +96,33 @@ li.list8-count:before{
 	border-right: 7px solid transparent;
 	border-bottom: 8px solid transparent;
 	border-left: 13px solid #F9B8CD;
+}
+
+.jpg{
+  z-index: 100000;
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+}
+
+.post{
+  float:left;
+  margin-right: 5px;
+}
+
+.post img{
+  width: 200px;
+  border-radius: 10px;
+}
+
+.hert{
+  position: relative;
+  left:5px;
+  bottom: 50px;
 }
