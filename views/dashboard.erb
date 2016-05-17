@@ -1,22 +1,37 @@
-<h1>ダッシュボード</h1>
-<p><a href="/dashboard?adult=1">R-18を表</a></p>
-<p><a href="/draw">お絵かきする</a></p>
+<img style="width:100%;" src="./img/top.png">
+<div class="draw">
+  <p style="float:left; margin-right:310px;"><a href="/draw">お絵かきする</a></p>
+  <p style="float:left; margin-right:6px;"><a href="/dashboard?adult=1">R-18</a></p>
+</div>
 
-<% posts.each do |post| %>
-  <div class="post">
-    <h2>
-      <%= post["title"] %>
-    </h2>
+<div class="columns">
+  <% posts.each do |post| %>
+
+  <div class="pin">
+
     <p class="post-image">
-    <img src="/uploads/<%= post["src"] %>" alt="<%= post["title"] %>">
-    <% if post['adult'] == "true" %>[R-18]<% end %>
+      <a href="/uploads/<%= post["src"] %>" data-lity>
+        <img src="/uploads/<%= post["src"] %>" alt="<%= Rack::Utils.escape_html post["title"] %>">
+        <% if post['adult'] == "true" %>[R-18]<% end %>
+      </a>
     </p>
-    <p class="hert">
-    💖
-    <button class="like" data-id="<%= post["id"] %>">
-      <%= post["likes"] %>
-    </button>
-    </p>
+
+    <div class="footer">
+      <div class="tittle">
+        <%= Rack::Utils.escape_html post["title"] %>
+      </div>
+      <div class="action">
+        <div class="hert">
+          <p class="hert_button">
+            💖
+          </p>
+          <button class="like" data-id="<%= post["id"] %>">
+            <%= post["likes"] %>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>
 <script src="/js/dashboard.js"></script>

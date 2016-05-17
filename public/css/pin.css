@@ -1,0 +1,19 @@
+.tittle
+{
+  font-size: 8px;
+  float: left;
+}
+.footer
+{
+  overflow: hidden;
+  background-color: rgba(196,196,196,0.8);
+}
+
+
+.hert{
+  display: inline-block;
+}
+
+.hert_button{
+  display: inline-block;
+}

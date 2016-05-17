@@ -1,13 +1,23 @@
 body {
     background: #white;
     color: #5C4747;/* 文字の色 */
-    background-color: #FFDCEF;
-    width: 700px;
+    background-color: #F0F2F3;
     margin: 0 auto;
+    position: relative;
 }
-<!--見出しだよ-->
+.draw{
+  position:absolute;
+  left:380px;
+  top:41px;
+}
+.draw  a[href]{
+  text-decoration: none;
+  color: #989898;
+}
+
+// 見出しだよ
 h2{
-  font-size: 1.2em;/* 文字の大きさ */
+  font-size: 10px;/* 文字の大きさ */
   font-weight: bold;/* 文字の太さ */
   color: #5C4747;/* 文字の色 */
   border-left: 7px solid #E07C7D;/* 文字左の点線の太さ・種類・カラー */
@@ -15,6 +25,7 @@ h2{
   margin: 0 0 1.5em;
   padding: 0.2em 0.8em;
 }
+
 <!--見出しだよ-->
 .enter{
   font-size: 1.2em;/* 文字の大きさ */
@@ -103,26 +114,92 @@ li.list8-count:before{
   position: absolute;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 25;
+  right: 25;
   bottom: 0;
   margin: auto;
-  width: 300px;
-  height: 300px;
+  width: 10px;
 }
 
-.post{
-  float:left;
-  margin-right: 5px;
-}
+
 
 .post img{
   width: 200px;
-  border-radius: 10px;
+
 }
 
-.hert{
-  position: relative;
-  left:5px;
-  bottom: 50px;
+#modal-content{
+	width:50%;
+	margin:1.5em auto 0;
+	padding:10px 20px;
+	border:2px solid #aaa;
+	background:#fff;
+	z-index:2;
+}
+
+.modal-p{
+	margin-top:1em;
+}
+
+.modal-p:first-child{
+	margin-top:0;
+}
+
+.button-link{
+	color:#00f;
+	text-decoration:underline;
+}
+
+.button-link:hover{
+	cursor:pointer;
+	color:#f00;
+}
+
+.columns {
+    -webkit-column-count: 5;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 5s;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 5;
+    column-gap: 10px;
+    column-fill: auto;
+    margin: 10px;
+}
+
+.pin {
+    display: inline-block;
+    background: #FEFEFE;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 0 2px 15px;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+    opacity: 1;
+    overflow: hidden;
+
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+
+}
+
+.pin img {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.pin p {
+    font: 12px/18px Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.action{
+  xfloat: right;
 }

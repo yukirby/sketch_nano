@@ -1,9 +1,11 @@
 require 'sinatra'
 require 'sqlite3'
+db = SQLite3::Database.new 'db.sqlite'
 require 'sinatra/json'
 require 'data_uri'
 require 'securerandom'
 require 'logger'
+
 
 logger = Logger.new(STDOUT)
 
@@ -44,11 +46,14 @@ post '/draw' do
 
   # DBに登録する
   time = Time.now.strftime('%Y-%m-%d %H:%M:%S')
-  sql = "INSERT INTO pictures (title, src, posted_at,adult) VALUES ('#{params['title']}', '#{name}', '#{time}','#{params['adult']}')"
-  db.execute_batch(sql)
-
-  # 終わったらダッシュボードに戻る
-  redirect '/dashboard'
+  sql = "INSERT INTO pictures (title, src, posted_at,adult)
+  VALUES (:title, :name, :time, :adult)"
+  db.execute(sql,
+    "title" => params[:title],
+    "name" => name,
+    "time" => time,
+    "adult" => params[:adult]
+  )
 end
 
 post '/api/like' do

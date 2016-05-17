@@ -20,9 +20,6 @@ $(function () {
   context2d.shadowColor = '#DD1281';
 
 
-
-
-
   // マウスを押し始めた時
   $canvas.mousedown(function (e) {
     var x = e.originalEvent.layerX; // 行き先
@@ -82,6 +79,7 @@ $('#color').on('change',function()
       // 画面を真っ白にする
       context2d.fillStyle = '#FFF';
       context2d.fillRect(0, 0, width, height);
+      //location.href ='/dashboard';
     });
   });
 });
