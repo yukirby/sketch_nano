@@ -19,10 +19,10 @@ end
 
 get '/dashboard' do
   if params['adult'] == "1"
-    posts = db.execute("SELECT * FROM pictures ORDER BY id DESC")
+    posts = db.execute("SELECT * FROM pictures ORDER BY likes DESC")
 
   else
-    posts = db.execute("SELECT * FROM pictures Where adult ='false' OR adult=null  ORDER BY id DESC")
+    posts = db.execute("SELECT * FROM pictures Where adult ='false' OR adult=null  ORDER BY likes  DESC")
 
   end
   erb :dashboard, {:locals => {:posts => posts}}
@@ -54,6 +54,7 @@ post '/draw' do
     "time" => time,
     "adult" => params[:adult]
   )
+  redirect '/dashboard'
 end
 
 post '/api/like' do

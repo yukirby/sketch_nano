@@ -1,7 +1,13 @@
 <img style="width:100%;" src="./img/top.png">
 <div class="draw">
   <p style="float:left; margin-right:310px;"><a href="/draw">お絵かきする</a></p>
+  <% if params['adult'] == '1' %>
+  <p style="float:left; margin-right:6px; font-weight:bold; "><a style="color:#000;" href="/dashboard">R-18</a></p>
+  <% else %>
   <p style="float:left; margin-right:6px;"><a href="/dashboard?adult=1">R-18</a></p>
+
+  <% end %>
+
 </div>
 
 <div class="columns">
@@ -22,12 +28,8 @@
       </div>
       <div class="action">
         <div class="hert">
-          <p class="hert_button">
-            💖
-          </p>
-          <button class="like" data-id="<%= post["id"] %>">
-            <%= post["likes"] %>
-          </button>
+          <div class="like fa fa-heart gray" data-id="<%= post["id"] %>">
+          </div>
         </div>
       </div>
     </div>

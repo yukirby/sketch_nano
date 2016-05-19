@@ -75,13 +75,33 @@ $('#color').on('change',function()
       title: title,
       adult: adult,
     }, function (result) {
-      alert('保存しました');
+      //alert('保存しました');
       // 画面を真っ白にする
       context2d.fillStyle = '#FFF';
       context2d.fillRect(0, 0, width, height);
-      //location.href ='/dashboard';
     });
   });
 });
 
 var context = $('canvas')[0].getContext('2d');
+
+
+
+document.querySelector('button.submit').addEventListener('click',function clickHandler(e){
+
+    this.removeEventListener('click',clickHandler,false);
+
+    e.preventDefault();
+    var self = this;
+    setTimeout(function(){
+        self.className = 'loading';
+    },125);
+
+    setTimeout(function(){
+        self.className = 'ready';
+    },4300);
+
+    location.href ='/dashboard';
+
+
+},false);

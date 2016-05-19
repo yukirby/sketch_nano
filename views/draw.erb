@@ -1,10 +1,11 @@
-<div class="drawbox">
-  <h1>お絵かき画面</h1>
-  <p><canvas id="draw_canvas" width="640px" height="480px"></canvas></p>
-  <p><input type="text" name="title" placeholder="絵のタイトル"></p>
-  <button class="save">保存する</button>
+<div style="background-color:#f9f5ef;" class="drawbox">
+  <img style="width:100%;" src="./img/sketch_header.png">
+  <input class="input__field input__field--haruki" type="text" id="input-1" name="title" placeholder="絵のタイトル"/>
+  <button class="save submit">保存する</button>
   <input id="line" type="range" min="5" max="50">
   <input id="color" type="color">
   <input id="adult" type="checkbox" ><span style="color:red";>R-18</span>
+  <p><canvas id="draw_canvas" width="600px" height="600px"></canvas></p>
 </div>
+
 <script src="/js/draw.js"></script>

@@ -1,15 +1,15 @@
 'use strict'
 
 $(function () {
-  $('button.like').click(function (e) {
+  $('div.like').click(function (e) {
     var $clicked = $(this);
     var dataId   = $clicked.data('id');
     var likes    = $clicked.text();
-  $(this).parent().find(".hert_button").addClass("animated rubberBand");
+  $(this).parent().find(".fa-heart").addClass("red");
   setTimeout(function(){
     console.log("hogehoge");
-    $clicked.parent().find(".hert_button").removeClass("animated rubberBand");
-  },1200)
+    $clicked.parent().find(".fa-heart").removeClass("red");
+  },750)
 
 
 
@@ -18,7 +18,7 @@ $(function () {
         {'like':dataId},
         function( result ){
           if (result === "ok")
-              $clicked.text(parseInt(likes, 10) + 1);
+              //$clicked.text(parseInt(likes, 10) + 1);
         console.log(result);
 
 

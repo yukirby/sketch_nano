@@ -109,23 +109,10 @@ li.list8-count:before{
 	border-left: 13px solid #F9B8CD;
 }
 
-.jpg{
-  z-index: 100000;
-  position: absolute;
-  position: absolute;
-  top: 0;
-  left: 25;
-  right: 25;
-  bottom: 0;
-  margin: auto;
-  width: 10px;
-}
-
 
 
 .post img{
   width: 200px;
-
 }
 
 #modal-content{
@@ -156,16 +143,7 @@ li.list8-count:before{
 }
 
 .columns {
-    -webkit-column-count: 5;
-    -webkit-column-gap: 10px;
-    -webkit-column-fill: auto;
-    -moz-column-count: 5s;
-    -moz-column-gap: 10px;
-    -moz-column-fill: auto;
-    column-count: 5;
-    column-gap: 10px;
-    column-fill: auto;
-    margin: 10px;
+    text-align: center;
 }
 
 .pin {
@@ -192,6 +170,7 @@ li.list8-count:before{
     width: 100%;
     padding-bottom: 15px;
     margin-bottom: 5px;
+    width: 300px;
 }
 
 .pin p {
@@ -201,5 +180,9 @@ li.list8-count:before{
 }
 
 .action{
-  xfloat: right;
+  float: right;
+}
+
+.drawbox{
+  background-color: #f9f5ef;
 }
